@@ -7,6 +7,7 @@ function Dog(name, starSign, breed, loc, quizResults) {
   this.breed = breed;
   this.loc = loc;
   this.quizResults = quizResults;
+  this.dogScore = 0;
   builtInDogs.push(this);
 };
 
@@ -43,17 +44,16 @@ var Molly = new Dog('Molly', 'Taurus', 'Australian Shepherd', 'SoDo', [1, 2, 4, 
 //pushes match scores (from compareDogs) to myDogScores
 var makeScores = function() {
   for (var i = 0; i < builtInDogs.length; i++) {
-    myDogScores.push(compareDogs(myDog, builtInDogs[i]));
+    myDogScores.push(builtInDogs[i]);
   }
 };
 
 //Takes two dogs, and compares how similar their multiple choice answers are. Returns "total" which is a value of how different your dogs are. Smaller = closest match.
 var compareDogs = function(dog1, dog2) {
-  var total = 0;
   for (var i = 0; i < dog1.quizResults.length; i++) {
-    total += Math.abs(dog1.quizResults[i] - dog2.quizResults[i]);
+    dog2.dogScore += Math.abs(dog1.quizResults[i] - dog2.quizResults[i]);
   }
-  return total;
+  return dog2.dogScore;
 };
 
 // sorts the myDogScores from best match to worst. (See line 14 for more info.)
