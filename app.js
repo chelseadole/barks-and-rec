@@ -63,3 +63,11 @@ var whichDog = function() {
   });
   return myDogScores;
 };
+
+var formInfo = function() {
+  var form = document.getElementsByTagName('form')[0];
+  // use event listener to remove form as follows
+  // document.getElementById('form').style.display = "none";
+};
+
+formInfo();
