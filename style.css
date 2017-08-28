@@ -1,0 +1,11 @@
+.navBar li {
+  display: inline-block;;
+}
+
+h1 {
+  color: red;
+}
+
+header {
+  text-align: center;
+}
