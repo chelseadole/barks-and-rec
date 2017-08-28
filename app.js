@@ -17,7 +17,7 @@ var builtInDogs = [];
 var myDogScores = [];
 
 // dog we're using for testing. Later this will be input info from form.
-var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', [1, 2, 3]);
+var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', [1, 2, 3, 4, 3, 2]);
 
 var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', [3, 4, 4, 1, 3, 1]);
 var Daisy = new Dog('Daisy', 'Capricorn', 'Beagle', 'Ballard', [1, 2, 2, 4, 3, 4]);
@@ -26,12 +26,12 @@ var Robb = new Dog('Robb', 'Aries', 'Australian Shepherd', 'Queen Anne', [4, 4, 
 var Zack = new Dog('Zack', 'Scorpio', 'Chihuahua', 'West Seattle', [1, 1, 4, 4, 3, 1]);
 var Monchi = new Dog('Monchi', 'Taurus', 'Terrier Mix', 'Edmonds', [2, 3, 3, 1, 4, 3]);
 var Bear = new Dog('Bear', 'Aquarius', 'Yellow Lab', 'Bellevue', [2, 4, 3, 1, 2, 1]);
-var Mia = new Dog('Mia', 'Libra', 'German Shepherd', 'Renton' [1, 4, 4, 3, 2, 3]);
+var Mia = new Dog('Mia', 'Libra', 'German Shepherd', 'Renton', [1, 4, 4, 3, 2, 3]);
 var Jack = new Dog('Jack', 'Capricorn', 'Boston Terrier', 'Greenlake', [1, 3, 4, 1, 1, 1]);
 var Tucker = new Dog('Tucker', 'Scorpio', 'Golden Retriever', 'Bellevue', [4, 1, 2, 3, 4, 2]);
 var Bentley = new Dog('Bentley', 'Pisces', 'Black Lab', 'Northgate', [2, 3, 4, 1, 4, 3]);
 var Cora = new Dog('Cora', 'Leo', 'Great Dane', 'Downtown Seattle', [1, 2, 3, 4, 2, 1]);
-var Coal = new Dog('Coal', 'Cancer', 'Black Lab', 'Greenlake' [2, 4, 1, 3, 3, 3]);
+var Coal = new Dog('Coal', 'Cancer', 'Black Lab', 'Greenlake' , [2, 4, 1, 3, 3, 3]);
 var Chickie = new Dog('Chickie', 'Leo', 'Husky', 'Seatac', [2, 1, 3, 4, 4, 2]);
 var Sam = new Dog('Sam', 'Taurus', 'Corgi', 'Pinehurst', [4, 1, 3, 3, 2, 2]);
 var Benji = new Dog('Benji', 'Aquarius', 'Shiba Inu', 'Belltown', [3, 4, 4, 1, 2, 1]);
@@ -44,6 +44,7 @@ var Molly = new Dog('Molly', 'Taurus', 'Australian Shepherd', 'SoDo', [1, 2, 4, 
 //pushes match scores (from compareDogs) to myDogScores
 var makeScores = function() {
   for (var i = 0; i < builtInDogs.length; i++) {
+    compareDogs(myDog, builtInDogs[i]);
     myDogScores.push(builtInDogs[i]);
   }
 };
@@ -52,6 +53,15 @@ var makeScores = function() {
 var compareDogs = function(dog1, dog2) {
   for (var i = 0; i < dog1.quizResults.length; i++) {
     dog2.dogScore += Math.abs(dog1.quizResults[i] - dog2.quizResults[i]);
+    if(dog1.starSign === dog2.starSign){
+      dog2.dogScore --;
+    }
+    if(dog1.loc === dog2.loc){
+      dog2.dogScore --;
+    }
+    if(dog1.breed === dog2.breed){
+      dog2.dogScore --;
+    }
   }
   return dog2.dogScore;
 };
@@ -59,7 +69,13 @@ var compareDogs = function(dog1, dog2) {
 // sorts the myDogScores from best match to worst. (See line 14 for more info.)
 var whichDog = function() {
   myDogScores.sort(function(a, b) {
-    return (a - b);
+    return (a.dogScore - b.dogScore);
   });
+  console.log(myDogScores[1].name);
+  localStorage.setItem('dogResults', JSON.stringify(myDogScores));
   return myDogScores;
+};
+
+var resetArray = function(){
+  myDogScores = [];
 };
