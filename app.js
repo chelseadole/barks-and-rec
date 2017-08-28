@@ -37,9 +37,7 @@ var compareDogs = function(dog1, dog2) {
 
 var whichDog = function() {
   myDogScores.sort(function(a, b) {
-    console.log('hello');
     return (a - b);
   });
-  console.log('second level');
   return myDogScores;
 };
