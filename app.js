@@ -19,7 +19,7 @@ var builtInDogs = [];
 var myDogScores = [];
 
 // dog we're using for testing. Later this will be input info from form.
-var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [1, 2, 3, 4, 3, 2], 'MyDog is our placeholder form dog.');
+var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [2, 4, 1, 4, 2, 4], 'MyDog is our placeholder form dog.');
 
 var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 4, 3, 3], 'Evi is a German Shepherd from Lake City. She likes swimming, 30+ minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is very energetic, likes to play with a large pack of dogs, and gets along best with big dogs.');
 
@@ -109,8 +109,23 @@ var appendToResults = function(){
   firstPic.setAttribute('src', myDogScores[1].picture);
   var secondpic = document.getElementById('secondPic');
   secondPic.setAttribute('src', myDogScores[2].picture);
-  var firstpic = document.getElementById('thirdPic');
+  var thirdpic = document.getElementById('thirdPic');
   thirdPic.setAttribute('src', myDogScores[3].picture);
+
+  var firstBio = document.getElementById('firstResult');
+  var firstContent = document.createElement('p');
+  firstContent.innerHTML = myDogScores[1].bio;
+  firstBio.appendChild(firstContent);
+
+  var secondBio = document.getElementById('secondResult');
+  var secondContent = document.createElement('p');
+  secondContent.innerHTML = myDogScores[2].bio;
+  secondBio.appendChild(secondContent);
+
+  var thirdBio = document.getElementById('thirdResult');
+  var thirdContent = document.createElement('p');
+  thirdContent.innerHTML = myDogScores[3].bio;
+  thirdBio.appendChild(thirdContent);
 
   var firstMap = document.getElementById('result1map');
   firstMap.setAttribute('src', dogMap[myDogScores[1].name]);
@@ -127,7 +142,8 @@ var resetArray = function(){
 var dogMap = {
   Evi: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d27285.095500103685!2d-122.35438254311276!3d47.71753544255073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7159a97e1f40824!2sNorthacres+Spray+Park!5e0!3m2!1sen!2sus!4v1504026387981',
   Daisy: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16910.74332175209!2d-122.38867815091056!3d47.67827309695646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549015d39c6c032f%3A0xcfafc6a0b5144bf!2sSalmon+Bay+Park!5e0!3m2!1sen!2sus!4v1504026585582',
-  Dadie: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11659.891050829621!2d-122.36881338415357!3d47.64397396693541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901509a631663b%3A0xb8fc9b507a5c1f5!2sDavid+Rodgers+Park!5e0!3m2!1sen!2sus!4v1504026778701',
+  Sadie: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38964.51369992415!2d-122.34970932556524!3d47.63941709624643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014d913bf3c81%3A0xcc998f649a5cf4f2!2sBoren+Park!5e0!3m2!1sen!2sus!4v1504043824844',
+  Robb: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11659.891050829621!2d-122.36881338415357!3d47.64397396693541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901509a631663b%3A0xb8fc9b507a5c1f5!2sDavid+Rodgers+Park!5e0!3m2!1sen!2sus!4v1504026778701',
   Zack: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26724.552931169346!2d-122.40542465377368!3d47.574185262370705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490408bb4215911%3A0x728d9a53673f5292!2sSchmitz+Preserve+Park!5e0!3m2!1sen!2sus!4v1504026978746',
   Monchi: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25748.434352200904!2d-122.39920686250471!3d47.800910535095156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901a572b704fd7%3A0x7415a90b2ef9f768!2sMarina+Beach+Park!5e0!3m2!1sen!2sus!4v1504027076659',
   Bear: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21022.34223059277!2d-122.1935367762392!3d47.60810125911881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906c67f8258501%3A0xb2e5d6c34b453b75!2sWilburton+Hill+Park!5e0!3m2!1sen!2sus!4v1504027186444',
