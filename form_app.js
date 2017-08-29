@@ -1,35 +1,56 @@
 'use strict';
-
+var userChoice = [];
+var num = 0;
 function removeForm(event){
   event.preventDefault();
 // Used to pull answers from Dog Info
   // answer1 = event.target.getElementsByTagName('input').ques1.value;
-  document.getElementById('form').style.display = 'none';
-  var div = document.getElementById('multi');
-  var formIn = document.createElement('form');
-  formIn.setAttribute('id', 'formOne');
-  div.appendChild(formIn);
-  var form = document.getElementById('formOne');
-  for (var i = 0; i < dogQuestions.length; i ++){
-    var question = dogQuestions[i].question;
-    console.log(question);
-    var label = document.createElement('label');
-    label.innerHTML = question + '<br>';
-    form.appendChild(label);
-    var answers = dogQuestions[i].choices;
-    console.log(answers);
-
-    for ( var j = 0; j < 4; j ++){
-      // var inputForm = document.createElement('form');
-      var radio = document.createElement('input');
-      radio.type = 'radio';
-      radio.setAttribute('name','answers');
-      label.appendChild(radio);
-      label.innerHTML += answers[j] + '<br>';
-
-    }
+  document.getElementById(formIDs[num]).style.display = 'none';
+  if(num < 6){
+    render(num, formIDs[num + 1]);
+    num++;
   };
 }
+function render(qnumber, formID){
+  var div = document.getElementById('multi');
+  var formIn = document.createElement('form');
+  formIn.setAttribute('id', formID);
+  div.appendChild(formIn);
+  var form = document.getElementById(formID);
+  var question = dogQuestions[num].question;
+  // console.log(question);
+  var label = document.createElement('label');
+  label.innerHTML = question + '<br>';
+  label.setAttribute('id', 'formLabel');
+  form.appendChild(label);
+  var answers = dogQuestions[qnumber].choices;
+  // console.log(answers);
+
+  for ( var j = 0; j < 4; j ++){
+      // var inputForm = document.createElement('form');
+    var radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.setAttribute('name','answers');
+    label.appendChild(radio);
+    label.innerHTML += answers[j] + '<br>';
+
+  }
+  var subChoice = document.createElement('button');
+  subChoice.type = 'button';
+  subChoice.innerHTML = 'submit Answer';
+  subChoice.style = 'display: block';
+  label.appendChild(subChoice);
+  subChoice.addEventListener('click', removeForm);
+};
+// function addAnotherQuestion(event) {
+//   event.preventDefault();
+//   var lable = document.getElementById('formLabel').style.display = 'none';
+//   // lable.innerHTML = '';
+//   num ++;
+//   console.log(num);
+//
+// };
+// document.getElementById('formLabel').addEventListener('click', addAnotherQuestion);
 document.getElementById('form').addEventListener('submit',removeForm);
 
 var dogQuestions = [{
@@ -57,3 +78,5 @@ var dogQuestions = [{
   choices: ['My dog prefers walking or playing without toys ', 'A ball is best, something to fetch', 'A stick or rope toy for tug-of-war', 'Multiple toys is best ']
 },
 ];
+
+var formIDs = ['form','form1','form2','form3','form4','form5', 'form6'];
