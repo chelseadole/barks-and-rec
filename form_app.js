@@ -28,6 +28,7 @@ function render(qnumber, formID){
 
   for ( var j = 0; j < 4; j ++){
       // var inputForm = document.createElement('form');
+
     var radio = document.createElement('input');
     radio.type = 'radio';
     radio.setAttribute('name','answers');
@@ -51,6 +52,7 @@ function render(qnumber, formID){
 //
 // };
 // document.getElementById('formLabel').addEventListener('click', addAnotherQuestion);
+
 document.getElementById('form').addEventListener('submit',removeForm);
 
 var dogQuestions = [{
