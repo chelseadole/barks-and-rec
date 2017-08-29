@@ -2,8 +2,8 @@
 
 function removeForm(event){
   event.preventDefault();
-  debugger;
-  answer1 = event.target.getElementsByTagName('input').ques1.value;
+// Used to pull answers from Dog Info
+  // answer1 = event.target.getElementsByTagName('input').ques1.value;
   document.getElementById('form').style.display = 'none';
 }
 document.getElementById('form').addEventListener('submit',removeForm);
@@ -44,9 +44,10 @@ for (var i = 0; i < dogQuestions.length; i ++){
   console.log(answers);
 
   for ( var j = 0; j < 4; j ++){
+    // var inputForm = document.createElement('form');
     var radio = document.createElement('input');
     radio.type = 'radio';
-    radio.class = 'rad';
+    radio.setAttribute('name','answers');
     label.appendChild(radio);
     label.innerHTML += answers[j] + '<br>';
 
