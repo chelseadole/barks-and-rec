@@ -21,6 +21,7 @@ function removeForm(event){
 
     for ( var j = 0; j < 4; j ++){
       // var inputForm = document.createElement('form');
+
       var radio = document.createElement('input');
       radio.type = 'radio';
       radio.setAttribute('name','answers');
@@ -28,6 +29,11 @@ function removeForm(event){
       label.innerHTML += answers[j] + '<br>';
 
     }
+    var subChoice = document.createElement('button');
+    subChoice.type = 'button';
+    subChoice.innerHTML = 'Submit Answer';
+    subChoice.style = 'display: block';
+    label.appendChild(subChoice);
   };
 }
 document.getElementById('form').addEventListener('submit',removeForm);
