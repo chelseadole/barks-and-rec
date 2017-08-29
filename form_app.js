@@ -2,9 +2,33 @@
 
 function removeForm(event){
   event.preventDefault();
-  debugger;
-  answer1 = event.target.getElementsByTagName('input').ques1.value;
+// Used to pull answers from Dog Info
+  // answer1 = event.target.getElementsByTagName('input').ques1.value;
   document.getElementById('form').style.display = 'none';
+  var div = document.getElementById('multi');
+  var formIn = document.createElement('form');
+  formIn.setAttribute('id', 'formOne');
+  div.appendChild(formIn);
+  var form = document.getElementById('formOne');
+  for (var i = 0; i < dogQuestions.length; i ++){
+    var question = dogQuestions[i].question;
+    console.log(question);
+    var label = document.createElement('label');
+    label.innerHTML = question + '<br>';
+    form.appendChild(label);
+    var answers = dogQuestions[i].choices;
+    console.log(answers);
+
+    for ( var j = 0; j < 4; j ++){
+      // var inputForm = document.createElement('form');
+      var radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.setAttribute('name','answers');
+      label.appendChild(radio);
+      label.innerHTML += answers[j] + '<br>';
+
+    }
+  };
 }
 document.getElementById('form').addEventListener('submit',removeForm);
 
@@ -33,22 +57,3 @@ var dogQuestions = [{
   choices: ['My dog prefers walking or playing without toys ', 'A ball is best, something to fetch', 'A stick or rope toy for tug-of-war', 'Multiple toys is best ']
 },
 ];
-var form = document.getElementById('formOne');
-for (var i = 0; i < dogQuestions.length; i ++){
-  var question = dogQuestions[i].question;
-  console.log(question);
-  var label = document.createElement('label');
-  label.innerHTML = question + '<br>';
-  form.appendChild(label);
-  var answers = dogQuestions[i].choices;
-  console.log(answers);
-
-  for ( var j = 0; j < 4; j ++){
-    var radio = document.createElement('input');
-    radio.type = 'radio';
-    radio.class = 'rad';
-    label.appendChild(radio);
-    label.innerHTML += answers[j] + '<br>';
-
-  }
-};
