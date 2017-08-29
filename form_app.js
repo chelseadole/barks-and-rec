@@ -6,8 +6,21 @@ function removeForm(event){
 }
 document.getElementById('form').addEventListener('submit',removeForm);
 
-var questions = ['ques1', 'ques2', 'ques3'];
-var answers = [[1,2,3], [1,2.3]];
+var dogQuestions = [{
+  question: "Which of these does your dog likes most?",
+  choices: ["Just walk", "Playing fetch", " Swiming", "Playing with other dogs"]
+},
+{
+  question:"What is your dog's ideal walk time?",
+  choices: ["5-10 mins ", "10-20 mins", "20-30 mins", "30+ mins "]
+}
+];
+for (var i = 0; i < questions.length; i ++){
+  var question = dogQuestions[i].question;
+  console.log(question);
+  var answers = dogQuestions[i].choices;
+  console.log(answers);
+}
 var form = document.getElementById('formOne');
 for (var i = 0; i > questions.length; i++){
   var lable = document.createElement('lable');
