@@ -112,20 +112,17 @@ var appendToResults = function(){
   var thirdpic = document.getElementById('thirdPic');
   thirdPic.setAttribute('src', myDogScores[3].picture);
 
-  var firstBio = document.getElementById('firstResult');
-  var firstContent = document.createElement('p');
-  firstContent.innerHTML = myDogScores[1].bio;
-  firstBio.appendChild(firstContent);
+  // var firstBio = document.getElementById('firstResult');
+  // var firstContent = document.createElement('p');
+  // firstContent.innerHTML = myDogScores[1].bio;
+  // firstBio.appendChild(firstContent);
 
-  var secondBio = document.getElementById('secondResult');
-  var secondContent = document.createElement('p');
-  secondContent.innerHTML = myDogScores[2].bio;
-  secondBio.appendChild(secondContent);
-
-  var thirdBio = document.getElementById('thirdResult');
-  var thirdContent = document.createElement('p');
-  thirdContent.innerHTML = myDogScores[3].bio;
-  thirdBio.appendChild(thirdContent);
+  var target1 = document.getElementById('firstBio');
+  target1.innerHTML = myDogScores[1].bio;
+  var target2 = document.getElementById('secondBio');
+  target2.innerHTML = myDogScores[2].bio;
+  var target3 = document.getElementById('thirdBio');
+  target3.innerHTML = myDogScores[3].bio;
 
   var firstMap = document.getElementById('result1map');
   firstMap.setAttribute('src', dogMap[myDogScores[1].name]);
@@ -133,6 +130,13 @@ var appendToResults = function(){
   secondMap.setAttribute('src', dogMap[myDogScores[2].name]);
   var thirdMap = document.getElementById('result3map');
   thirdMap.setAttribute('src', dogMap[myDogScores[3].name]);
+
+  var firstLabel = document.getElementById('parkLabel1');
+  firstLabel.innerHTML = myDogScores[1].name + '\'s local park:';
+  var secondLabel = document.getElementById('parkLabel2');
+  secondLabel.innerHTML = myDogScores[2].name + '\'s local park:';
+  var thirdLabel = document.getElementById('parkLabel3');
+  thirdLabel.innerHTML = myDogScores[3].name + '\'s local park:';
 };
 
 var resetArray = function(){

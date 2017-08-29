@@ -3,7 +3,24 @@ h2 {
   text-align: center;
 }
 
-p, iframe, img {
+.resultdivs {
+  position: relative;
+}
+
+h3 {
+  display: block;
+  width: 200px;
+}
+
+p {
+  display: block;
+  width: 33%;
+}
+
+
+
+/*p, iframe, img {
+  position: relative;
   float: left;
 }
 
@@ -13,8 +30,16 @@ h3 {
 
 #firstResult, #secondResult, #thirdResult {
   display: inline-block;
+  background-color:
 }
 
 p {
   width: 400px;
+  border-radius: 10px;
+  background-color: rgba(173, 213, 169, 0.83);
 }
+
+.classdivs {
+  float: left;
+  position: absolute;
+}*/
