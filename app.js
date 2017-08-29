@@ -1,13 +1,14 @@
 'use strict';
 
 // Dog constructor object, pushes all completed Dog objects to global builtInDogs array.
-function Dog(name, starSign, breed, loc, picture, quizResults) {
+function Dog(name, starSign, breed, loc, picture, quizResults, bio) {
   this.name = name;
   this.starSign = starSign;
   this.breed = breed;
   this.loc = loc;
   this.picture = picture;
   this.quizResults = quizResults;
+  this.bio = bio;
   this.dogScore = 0;
   builtInDogs.push(this);
 };
@@ -18,23 +19,38 @@ var builtInDogs = [];
 var myDogScores = [];
 
 // dog we're using for testing. Later this will be input info from form.
-var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [1, 2, 3, 4, 3, 2]);
+var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [1, 2, 3, 4, 3, 2], 'MyDog is our placeholder form dog.');
 
-var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 1, 3, 1]);
-var Daisy = new Dog('Daisy', 'Capricorn', 'Beagle', 'Ballard', '../dogImgs/beagle-puppy-4.jpg', [1, 2, 2, 4, 3, 4]);
-var Sadie = new Dog('Sadie', 'Cancer', 'Mix (Unknown)', 'Capitol Hill', '../dogImgs/mixedpuppy.jpg', [3, 3, 2, 2, 1, 4]);
-var Robb = new Dog('Robb', 'Aries', 'Australian Shepherd', 'Queen Anne', '../dogImgs/australian-1.jpg', [4, 4, 3, 1, 1, 2]);
-var Zack = new Dog('Zack', 'Scorpio', 'Chihuahua', 'Alki', '../dogImgs/Chihuahua_6.jpg', [1, 1, 4, 4, 3, 1]);
-var Monchi = new Dog('Monchi', 'Taurus', 'Terrier', 'Edmonds', '../dogImgs/terriermix.jpg', [2, 3, 3, 1, 4, 3]);
-var Bear = new Dog('Bear', 'Aquarius', 'Yellow Lab', 'Bellevue', '../dogImgs/yellow-lab.jpg', [2, 4, 3, 1, 2, 1]);
-var Mia = new Dog('Mia', 'Libra', 'German Shepherd', 'Renton', '../dogImgs/germanshepherd.jpg', [1, 4, 4, 3, 2, 3]);
-var Jack = new Dog('Jack', 'Capricorn', 'Boston Terrier', 'Greenlake', '../dogImgs/bostonterrier.jpg', [1, 3, 4, 1, 1, 1]);
-var Tucker = new Dog('Tucker', 'Scorpio', 'Golden Retriever', 'Wedgwood', '../dogImgs/Golden-Retriever_8.jpg', [4, 1, 2, 3, 4, 2]);
-var Bentley = new Dog('Bentley', 'Pisces', 'Black Lab', 'Shoreline', '../dogImgs/black-lab.jpg', [2, 3, 4, 1, 4, 3]);
-var Cora = new Dog('Cora', 'Leo', 'Great Dane', 'Downtown Seattle', '../dogImgs/greatdane.jpg', [1, 2, 3, 4, 2, 1]);
-var Coal = new Dog('Coal', 'Cancer', 'Black Lab', 'Magnolia', '../dogImgs/black-lab.jpg', [2, 4, 1, 3, 3, 3]);
-var Chickie = new Dog('Chickie', 'Leo', 'Husky', 'Seatac', '../dogImgs/husky.jpg', [2, 1, 3, 4, 4, 2]);
-var Sam = new Dog('Sam', 'Taurus', 'Corgi', 'Ravenna', '../dogImgs/corgi.jpg', [4, 1, 3, 3, 2, 2]);
+var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 4, 3, 3], 'Evi is a German Shepherd from Lake City. She likes swimming, 30+ minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is very energetic, likes to play with a large pack of dogs, and gets along best with big dogs.');
+
+var Daisy = new Dog('Daisy', 'Capricorn', 'Beagle', 'Ballard', '../dogImgs/beagle-puppy-4.jpg', [1, 2, 2, 4, 3, 4], 'Daisy is a Beagle from Ballard. She prefers walking over swimming or fetch, 10-20 minute walks, and her favorite activity is playing with multiple toys. She is very energetic, likes to play with a small group of dogs, and gets along with dogs of all sizes.');
+
+var Sadie = new Dog('Sadie', 'Cancer', 'Mix (Unknown)', 'Capitol Hill', '../dogImgs/mixedpuppy.jpg', [3, 3, 2, 2, 1, 4], 'Sadie is a mix from Capitol Hill. She likes swimming, 20-30 minute walks, and her favorite activity is playing with a ball. She is low energy and doesn\'t get along well with all dogs, but prefers medium-sized dogs.');
+
+var Robb = new Dog('Robb', 'Aries', 'Australian Shepherd', 'Queen Anne', '../dogImgs/australian-1.jpg', [4, 4, 3, 4, 4, 2], 'Robb is an Australian Shepherd from Queen Anne. He likes swimming, 30+ minute walks, and his favorite activity is playing tug-of-war with a stick or rope. He is crazy energetic, likes to play with a large pack of dogs, and gets along best with medium-sized dogs.');
+
+var Zack = new Dog('Zack', 'Scorpio', 'Chihuahua', 'Alki', '../dogImgs/Chihuahua_6.jpg', [1, 1, 4, 2, 3, 1], 'Zack is a Chihuahua from Alki. He prefers walking over swimming or fetch, 10-20 minute walks, and his favorite activity is playing with multiple toys. He is a little energetic, likes to play with a small group of dogs, and gets along best with small dogs.');
+
+var Monchi = new Dog('Monchi', 'Taurus', 'Terrier', 'Edmonds', '../dogImgs/terriermix.jpg', [2, 3, 2, 1, 3, 3], 'Monchi is an Australian Shepherd from Queen Anne. He likes playing fetch, 20-30 minute walks, and his favorite activity is playing with a ball. He is not energetic, likes to play with a small group of dogs, and gets along best with big dogs.');
+
+var Bear = new Dog('Bear', 'Aquarius', 'Yellow Lab', 'Bellevue', '../dogImgs/yellow-lab.jpg', [2, 4, 3, 1, 2, 1], 'Bear is a Yellow Lab from Bellevue. He likes playing fetch, 30+ minute walks, and his favorite activity is playing tug-of-war with a stick or rope. He is low energy, likes to play with just one other dog, and gets along best with small dogs.');
+
+var Mia = new Dog('Mia', 'Libra', 'German Shepherd', 'Renton', '../dogImgs/germanshepherd.jpg', [1, 4, 4, 3, 2, 3], 'Mia is a German Shepherd from Renton. She prefers walking over swimming or fetch, 30+ minute walks, and his favorite activity is playing with multiple toys. He is very energetic, likes to play with just one other dog, and gets along best with big dogs.');
+
+var Jack = new Dog('Jack', 'Capricorn', 'Boston Terrier', 'Greenlake', '../dogImgs/bostonterrier.jpg', [3, 2, 4, 1, 1, 1], 'Jack is a Boston Terrier from Greenlake. He likes swimming, 10-20 minute walks, and his favorite activity is playing with multiple toys. He is not energetic and doesn\'t get along well with all dogs, but gets along best with small dogs.');
+
+var Tucker = new Dog('Tucker', 'Scorpio', 'Golden Retriever', 'Wedgwood', '../dogImgs/Golden-Retriever_8.jpg', [4, 1, 2, 3, 4, 2], 'Tucker is an Golden Retriever from Wedgwood. He likes socializing with other dogs, 5-10 minute walks, and his favorite activity is playing with a ball. He is very energetic, likes to play with a large pack of dogs, and gets along best with medium-sized dogs.');
+
+var Bentley = new Dog('Bentley', 'Pisces', 'Black Lab', 'Shoreline', '../dogImgs/black-lab.jpg', [3, 4, 1, 1, 4, 3], 'Bentley is a Black Lab from Shoreline. He likes swimming, 30+ minute walks, and his favorite activity is walking or playing without toys. He is not energetic, likes to play with a large pack of dogs, and gets along best with big dogs.');
+
+var Cora = new Dog('Cora', 'Leo', 'Great Dane', 'Downtown Seattle', '../dogImgs/greatdane.jpg', [1, 2, 3, 4, 2, 1], 'Cora is a Great Dane from Downtown Seattle. She prefers walking over swimming or fetch, 10-20 minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is a little energetic, likes to play with just one other dog, and gets along best with small dogs.');
+
+var Coal = new Dog('Coal', 'Cancer', 'Black Lab', 'Magnolia', '../dogImgs/black-lab.jpg', [4, 4, 1, 3, 3, 3], 'Coal is a Black Lab from Queen Anne. He likes socializing with other dogs, 30+ minute walks, and his favorite activity is walking or playing without toys. He is very energetic, likes to play with a small group of dogs, and gets along best with big dogs.');
+
+var Chickie = new Dog('Chickie', 'Leo', 'Husky', 'Seatac', '../dogImgs/husky.jpg', [2, 3, 3, 4, 4, 2], 'Chickie is an Husky from Seatac. She likes playing fetch, 20-30 minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is crazy energetic, likes to play with a large pack of dogs, and gets along best with medium-sized dogs.');
+
+var Sam = new Dog('Sam', 'Taurus', 'Corgi', 'Ravenna', '../dogImgs/corgi.jpg', [4, 1, 2, 3, 2, 2], 'Sam is a Corgi from Queen Anne. He likes socializing with other dogs, 5-10 minute walks, and his favorite activity is playing with a ball. He is very energetic, likes to play with just one other dog, and gets along best with medium-sized dogs.');
+
 var Benji = new Dog('Benji', 'Aquarius', 'Shiba Inu', 'Montlake', '../dogImgs/shibainu.jpg', [3, 4, 4, 1, 2, 1]);
 var Spot = new Dog('Spot', 'Virgo', 'Dalmation', 'Eastlake', '../dogImgs/Dalmatian.jpg', [2, 1, 4, 4, 1, 2]);
 var Fido = new Dog('Fido', 'Aries', 'Cocker Spaniel', 'Queen Anne', '../dogImgs/cocker-spaniel.jpg', [4, 3, 2, 1, 2, 3]);
