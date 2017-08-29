@@ -1,0 +1,7 @@
+h2 {
+  color: red;
+}
+
+#firstResult, #secondResult, #thirdResult {
+  float: left;
+}
