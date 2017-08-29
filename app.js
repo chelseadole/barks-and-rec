@@ -18,9 +18,9 @@ var builtInDogs = [];
 var myDogScores = [];
 
 // dog we're using for testing. Later this will be input info from form.
-var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', [1, 2, 3, 4, 3, 2]);
+var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [1, 2, 3, 4, 3, 2]);
 
-var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', [3, 4, 4, 1, 3, 1]);
+var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 1, 3, 1]);
 var Daisy = new Dog('Daisy', 'Capricorn', 'Beagle', 'Ballard', '../dogImgs/beagle-puppy-4.jpg', [1, 2, 2, 4, 3, 4]);
 var Sadie = new Dog('Sadie', 'Cancer', 'Mix (Unknown)', 'Capitol Hill', '../dogImgs/mixedpuppy.jpg', [3, 3, 2, 2, 1, 4]);
 var Robb = new Dog('Robb', 'Aries', 'Australian Shepherd', 'Queen Anne', '../dogImgs/australian-1.jpg', [4, 4, 3, 1, 1, 2]);
@@ -52,7 +52,7 @@ var makeScores = function() {
 
 //Takes two dogs, and compares how similar their multiple choice answers are. Returns "total" which is a value of how different your dogs are. Smaller = closest match.
 var compareDogs = function(dog1, dog2) {
-  for (var i = 0; i < dog1.quizResults.length; i++) {
+  for (var i = 0; i < 5; i++) {
     dog2.dogScore += Math.abs(dog1.quizResults[i] - dog2.quizResults[i]);
     if(dog1.starSign === dog2.starSign){
       dog2.dogScore --;
@@ -73,7 +73,30 @@ var whichDog = function() {
     return (a.dogScore - b.dogScore);
   });
   localStorage.setItem('dogResults', JSON.stringify(myDogScores));
-  return myDogScores;
+  appendToResults();
+};
+
+var appendToResults = function(){
+  var firstH3 = document.getElementById('firstH3');
+  firstH3.innerHTML = 'Top Match: ' + myDogScores[1].name;
+  var secondH3 = document.getElementById('secondH3');
+  secondH3.innerHTML = '2nd Match: ' + myDogScores[2].name;
+  var thirdH3 = document.getElementById('thirdH3');
+  thirdH3.innerHTML = '3rd Match: ' + myDogScores[3].name;
+
+  var firstpic = document.getElementById('firstPic');
+  firstPic.setAttribute('src', myDogScores[1].picture);
+  var secondpic = document.getElementById('secondPic');
+  secondPic.setAttribute('src', myDogScores[2].picture);
+  var firstpic = document.getElementById('thirdPic');
+  thirdPic.setAttribute('src', myDogScores[3].picture);
+
+  var firstMap = document.getElementById('result1map');
+  firstMap.setAttribute('src', dogMap[myDogScores[1].name]);
+  var secondMap = document.getElementById('result2map');
+  secondMap.setAttribute('src', dogMap[myDogScores[2].name]);
+  var thirdMap = document.getElementById('result3map');
+  thirdMap.setAttribute('src', dogMap[myDogScores[3].name]);
 };
 
 var resetArray = function(){
@@ -102,3 +125,6 @@ var dogMap = {
   Buddy: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11188.572118244958!2d-122.34667815141128!3d47.62759170104097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490153bdc42ba65%3A0xc2981a6ccaed5d7d!2sLake+Union+Park!5e0!3m2!1sen!2sus!4v1504028428076',
   Molly: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43108.775032065685!2d-122.37647748714612!3d47.642048574128076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901502b25bb07f%3A0x1e6e55abec496196!2sGas+Works+Park!5e0!3m2!1sen!2sus!4v1504028526850',
 };
+
+makeScores();
+whichDog();
