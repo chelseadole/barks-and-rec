@@ -44,12 +44,11 @@ for (var i = 0; i < dogQuestions.length; i ++){
   console.log(answers);
 
   for ( var j = 0; j < 4; j ++){
-    var inputForm = document.createElement('form');
+    // var inputForm = document.createElement('form');
     var radio = document.createElement('input');
     radio.type = 'radio';
-    radio.class = 'rad';
-    inputForm.appendChild(radio);
-    label.appendChild(inputForm);
+    radio.setAttribute('name','answers');
+    label.appendChild(radio);
     label.innerHTML += answers[j] + '<br>';
 
   }
