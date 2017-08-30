@@ -18,10 +18,12 @@ function removeForm(event){
   document.getElementById(formIDs[num]).style.display = 'none';
   if(num < 6){
     render(num, formIDs[num + 1], buttonLabels[num]);
-    num++;
-  };
-  location.assign('resultsPage.html');
-};
+  }
+  else{
+    location.assign('resultsPage.html');
+  }
+  num++;
+}
 
 function render(qnumber, formID, buttonLabels){
   var div = document.getElementById('multi');
