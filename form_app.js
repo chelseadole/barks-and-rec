@@ -12,18 +12,17 @@ function removeForm(event){
   userInput.push(answerTwo);
   var answerThree = document.getElementById('ques3').value;
   userInput.push(answerThree);
-  console.log('yoooo');
   var json = JSON.stringify(userInput);
   localStorage.setItem('formData', json);
 
   document.getElementById(formIDs[num]).style.display = 'none';
   if(num < 6){
-    render(num, formIDs[num + 1], buttonLables[num]);
+    render(num, formIDs[num + 1], buttonLabels[num]);
     num++;
   };
 }
 
-function render(qnumber, formID, buttonLables){
+function render(qnumber, formID, buttonLabels){
   var div = document.getElementById('multi');
   var formIn = document.createElement('form');
   formIn.setAttribute('id', formID);
@@ -44,11 +43,12 @@ function render(qnumber, formID, buttonLables){
     var radio = document.createElement('input');
     radio.type = 'radio';
     radio.setAttribute('name','answers');
-    radio.setAttribute('class', buttonLables);
+    radio.setAttribute('class', buttonLabels);
     label.appendChild(radio);
     label.innerHTML += answers[j] + '<br>';
 
   }
+
   var subChoice = document.createElement('button');
   subChoice.type = 'button';
   subChoice.innerHTML = 'submit Answer';
@@ -56,12 +56,14 @@ function render(qnumber, formID, buttonLables){
   label.appendChild(subChoice);
   subChoice.addEventListener('click', removeForm);
   subChoice.addEventListener('click', function (){
-    for(var i = 1; i < 5; i ++){
-      var currentButton = document.getElementsByClassName(buttonLables)[i];
+    for(var i = 0; i < 4; i ++){
+      var currentButton = document.getElementsByClassName(buttonLabels)[i];
       if(currentButton.checked){
-        userChoice.push(i);
+        console.log(currentButton.nextSibling);
+        userChoice.push(i + 1);
       }
     }
+    console.log(userChoice);
     var myJSON = JSON.stringify(userChoice);
     localStorage.setItem('answersData', myJSON);
   });
@@ -99,4 +101,4 @@ var dogQuestions = [{
 ];
 
 var formIDs = ['form','form1','form2','form3','form4','form5', 'form6'];
-var buttonLables = ['button1','button2','button3','button4','button5','button6'];
+var buttonLabels = ['button1','button2','button3','button4','button5','button6'];
