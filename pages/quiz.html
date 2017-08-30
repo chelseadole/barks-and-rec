@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel= "stylesheet" href="../style.css">
+    <link rel= "stylesheet" href="../quiz.css">
     <link rel="icon" type="tab icon" href="../icons/paw.jpeg"/>
     <title>Barks 'N Rec</title>
   </head>
   <body>
     <header>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="locations.html">Locations</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-    </ul>
-  </header>
+      <h1>Barks 'N Rec</h1>
+        <img class="logoL" src="../icons/paw.jpeg" alt="paw"/>
+        <img class="logoR" src="../icons/paw.jpeg" alt="paw"/>
+      <ul class="navBar">
+        <li class="button"><a href="about.html">About Us</a></li>
+        <li class="button"><a href="resultsPage.html">Locations</a></li>
+        <li class="button"><a href="contacts.html">Contact Us</a></li>
+        <li class="button"><a href="testimonials.html">Testimonials</a></li>
+      </ul>
+    </header>
+    <div class="main">
   <form id="form">
     <fieldset id = "field">
       <legend>
         Dog Info
       </legend>
-      <label for = "ques1" class = "labels">What type of a dog do you have?</lable>
-      <input type="text" name = "ques1"/>
+      <label for = "ques1" class = "labels">What type of a dog do you have?</label>
+      <input class="typeOfDog"type="text" id = "ques1"/>
       <br>
       <label for = "ques2" class = "labels">Where do you live?</label>
-      <input type="text" name = "ques2"/>
+      <input class="typeOfDog" type="text" id = "ques2"/>
       <br>
       <label for = "ques3" class = "labels">What is your dog's star sign?</label>
-      <input type="text" name = "ques3"/><br>
+      <input class="typeOfDog" type="text" id = "ques3"/><br>
       <input type="submit" name="button"></input>
     </fieldset>
   </form>
@@ -35,6 +38,7 @@
 
 
   </div>
+</div>
   </body>
 <script type="text/javascript" src="../form_app.js"></script>
 </html>

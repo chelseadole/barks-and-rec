@@ -10,7 +10,9 @@ function Dog(name, starSign, breed, loc, picture, quizResults, bio) {
   this.quizResults = quizResults;
   this.bio = bio;
   this.dogScore = 0;
-  builtInDogs.push(this);
+  if (this.name != 'MyDog') {
+    builtInDogs.push(this);
+  }
 };
 
 // "builtInDogs" is all Dog objects.
@@ -18,14 +20,11 @@ function Dog(name, starSign, breed, loc, picture, quizResults, bio) {
 var builtInDogs = [];
 var myDogScores = [];
 
-// function makeMyDog() {
-//   //code here to grab dog's name, star sign, breed, and neighborhood
-//   var radioAnswerArray = JSON.parse(localStorage.answersData);
-//   var formAnswerArray = JSON.parse(localStorage.SOMETHING);
-//   var myDog = new Dog();
-// };
+var radioAnswerArray = JSON.parse(localStorage.answersData);
+var formAnswerArray = JSON.parse(localStorage.formData);
+var myDog = new Dog('MyDog', formAnswerArray[2], formAnswerArray[0], formAnswerArray[1], 'My House', 'img-placeholder', radioAnswerArray, 'bio-placeholder');
 
-var myDog = new Dog('myDog', 'Leo', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [3, 2, 2, 2, 1, 3], 'MyDog is our placeholder form dog.');
+// var myDog = new Dog('myDog', 'Leo', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [3, 2, 2, 2, 1, 3], 'MyDog is our placeholder form dog.');
 
 var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 4, 3, 3], 'Evi is a German Shepherd from Lake City. She likes swimming, 30+ minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is very energetic, likes to play with a large pack of dogs, and gets along best with big dogs.');
 
@@ -105,44 +104,39 @@ var whichDog = function() {
 
 var appendToResults = function(){
   var firstH3 = document.getElementById('firstH3');
-  firstH3.innerHTML = 'Top Match: ' + myDogScores[1].name;
+  firstH3.innerHTML = 'Top Match: ' + myDogScores[0].name;
   var secondH3 = document.getElementById('secondH3');
-  secondH3.innerHTML = '2nd Match: ' + myDogScores[2].name;
+  secondH3.innerHTML = '2nd Match: ' + myDogScores[1].name;
   var thirdH3 = document.getElementById('thirdH3');
-  thirdH3.innerHTML = '3rd Match: ' + myDogScores[3].name;
+  thirdH3.innerHTML = '3rd Match: ' + myDogScores[2].name;
 
   var firstpic = document.getElementById('firstPic');
-  firstPic.setAttribute('src', myDogScores[1].picture);
+  firstPic.setAttribute('src', myDogScores[0].picture);
   var secondpic = document.getElementById('secondPic');
-  secondPic.setAttribute('src', myDogScores[2].picture);
+  secondPic.setAttribute('src', myDogScores[1].picture);
   var thirdpic = document.getElementById('thirdPic');
-  thirdPic.setAttribute('src', myDogScores[3].picture);
-
-  // var firstBio = document.getElementById('firstResult');
-  // var firstContent = document.createElement('p');
-  // firstContent.innerHTML = myDogScores[1].bio;
-  // firstBio.appendChild(firstContent);
+  thirdPic.setAttribute('src', myDogScores[2].picture);
 
   var target1 = document.getElementById('firstBio');
-  target1.innerHTML = myDogScores[1].bio;
+  target1.innerHTML = myDogScores[0].bio;
   var target2 = document.getElementById('secondBio');
-  target2.innerHTML = myDogScores[2].bio;
+  target2.innerHTML = myDogScores[1].bio;
   var target3 = document.getElementById('thirdBio');
-  target3.innerHTML = myDogScores[3].bio;
+  target3.innerHTML = myDogScores[2].bio;
 
   var firstMap = document.getElementById('result1map');
-  firstMap.setAttribute('src', dogMap[myDogScores[1].name]);
+  firstMap.setAttribute('src', dogMap[myDogScores[0].name]);
   var secondMap = document.getElementById('result2map');
-  secondMap.setAttribute('src', dogMap[myDogScores[2].name]);
+  secondMap.setAttribute('src', dogMap[myDogScores[1].name]);
   var thirdMap = document.getElementById('result3map');
-  thirdMap.setAttribute('src', dogMap[myDogScores[3].name]);
+  thirdMap.setAttribute('src', dogMap[myDogScores[2].name]);
 
   var firstLabel = document.getElementById('parkLabel1');
-  firstLabel.innerHTML = myDogScores[1].name + '\'s local park:';
+  firstLabel.innerHTML = myDogScores[0].name + '\'s local park:';
   var secondLabel = document.getElementById('parkLabel2');
-  secondLabel.innerHTML = myDogScores[2].name + '\'s local park:';
+  secondLabel.innerHTML = myDogScores[1].name + '\'s local park:';
   var thirdLabel = document.getElementById('parkLabel3');
-  thirdLabel.innerHTML = myDogScores[3].name + '\'s local park:';
+  thirdLabel.innerHTML = myDogScores[2].name + '\'s local park:';
 };
 
 var resetArray = function(){
@@ -173,6 +167,5 @@ var dogMap = {
   Molly: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43108.775032065685!2d-122.37647748714612!3d47.642048574128076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901502b25bb07f%3A0x1e6e55abec496196!2sGas+Works+Park!5e0!3m2!1sen!2sus!4v1504028526850',
 };
 
-// makeMyDog();
 makeScores();
 whichDog();
