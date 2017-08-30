@@ -1,6 +1,10 @@
 .fix{
   font-size: 0px;
   width:100%;
+  border: 2px solid black;
+  background-color: white;
+  opacity: .8;
+  height: 160px;
 }
 
 .box{
@@ -10,14 +14,11 @@
   box-sizing: border-box;
 }
 
-.social{
-    /*background-color: red;*/
-}
-
 .logo h1{
   font-size: 4vw;
   width: 74%;
   display:inline-block;
+  font-family: 'Lobster Two', cursive;
 }
 
 .logo i{
@@ -55,4 +56,28 @@ a{
 
 .fb{
   margin-left: 10%;
+  color: #3B579D;
+}
+
+.twit{
+  color: #1EA1F3;
+}
+
+.insta{
+  color:#924CC8;
+}
+
+.pint{
+  color: #BD081B;
+}
+
+.yt{
+  color: #FF0000;
+}
+
+body{
+  margin: 1px;
+  background-image: url(../miscImages/parkBackgroundSmaller.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
