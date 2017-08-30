@@ -18,8 +18,11 @@ function removeForm(event){
   document.getElementById(formIDs[num]).style.display = 'none';
   if(num < 6){
     render(num, formIDs[num + 1], buttonLabels[num]);
-    num++;
-  };
+  }
+  else{
+    location.assign('resultsPage.html');
+  }
+  num++;
 }
 
 function render(qnumber, formID, buttonLabels){
@@ -59,13 +62,10 @@ function render(qnumber, formID, buttonLabels){
     for(var i = 0; i < 4; i ++){
       var currentButton = document.getElementsByClassName(buttonLabels)[i];
       if(currentButton.checked){
-        console.log(currentButton.nextSibling);
         userChoice.push(i + 1);
       }
     }
-    console.log(userChoice);
     var myJSON = JSON.stringify(userChoice);
-    localStorage.setItem('answersData', myJSON);
   });
 };
 
@@ -76,7 +76,7 @@ document.getElementById('form').addEventListener('submit',removeForm);
 
 var dogQuestions = [{
   question: 'Which of these does your dog likes most?',
-  choices: ['Just walk', 'Playing fetch', ' Swiming', 'Playing with other dogs']
+  choices: ['Just walk', 'Playing fetch', ' Swimming', 'Playing with other dogs']
 },
 {
   question:'What is your dog\'s ideal walk time?',
