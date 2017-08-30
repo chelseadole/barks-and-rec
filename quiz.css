@@ -71,18 +71,6 @@
 
  }
 
- .submit{
-   background-color: #28bf20;
-  border: 1px solid black;
-  border-radius: 10px;
-  color: white;
-  padding: 10px;
-  opacity: 1;
-  position: relative;
-  top: 45px;
-  right: 308px;
- }
-
  .button{
    background-color: #28bf20;
   border: 1px solid black;
@@ -119,8 +107,16 @@
   clear:both;
 }
 
+#form {
+  text-align: center;
+  position: relative;
+  top: 200px;
+  width: 54%;
+  left: 270px;
+  font-family: 'Quicksand', sans-serif;
+}
 
-
-#field {
-  margin-top: 25px;
+fieldset {
+  border-radius: 25px;
+padding: 20px;
 }
