@@ -14,20 +14,45 @@
     /*background-color: red;*/
 }
 
-.logo{
-  background-color: blue;
+.logo h1{
+  font-size: 4vw;
+  width: 74%;
+  display:inline-block;
+}
+
+.logo i{
+  width:6%;
+  font-size:20px;
+  display:inline-block;
 }
 
 .nav{
-  /*background-color: green;*/
-  font-size: 16px;
+  font-size: 0;
   text-align: center;
 }
 
 .icon{
-  font-size: 80px;
+  font-size: 4vw;
   position: relative;
-  bottom: 50px;
   margin: 1px;
   margin-left: 1%;
+}
+
+.button{
+  border: 1px solid black;
+  border-radius: 10px;
+  display: inline-block;
+  width: 30%;
+  padding: 10px;
+  font-size: 1vw;
+  position: relative;
+  height: 20px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.fb{
+  margin-left: 10%;
 }
