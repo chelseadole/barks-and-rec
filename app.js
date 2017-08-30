@@ -10,7 +10,7 @@ function Dog(name, starSign, breed, loc, picture, quizResults, bio) {
   this.quizResults = quizResults;
   this.bio = bio;
   this.dogScore = 0;
-  if (this.name != 'MyDog') {
+  if (this.name != localStorage.dogName) {
     builtInDogs.push(this);
   }
 };
@@ -22,9 +22,9 @@ var myDogScores = [];
 
 var radioAnswerArray = JSON.parse(localStorage.answersData);
 var formAnswerArray = JSON.parse(localStorage.formData);
-var myDog = new Dog('MyDog', formAnswerArray[2], formAnswerArray[0], formAnswerArray[1], 'My House', 'img-placeholder', radioAnswerArray, 'bio-placeholder');
-
-// var myDog = new Dog('myDog', 'Leo', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [3, 2, 2, 2, 1, 3], 'MyDog is our placeholder form dog.');
+var ownerName = localStorage.ownerName;
+var dogName = localStorage.dogName;
+var myDog = new Dog(dogName, formAnswerArray[2], formAnswerArray[0], formAnswerArray[1], 'My House', radioAnswerArray, 'bio-placeholder');
 
 var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 4, 3, 3], 'Evi is a German Shepherd from Lake City. She likes swimming, 30+ minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is very energetic, likes to play with a large pack of dogs, and gets along best with big dogs.');
 
@@ -68,6 +68,8 @@ var Buddy = new Dog('Buddy', 'Leo', 'Pug', 'South Lake Union', '../dogImgs/pug.j
 
 var Molly = new Dog('Molly', 'Taurus', 'Australian Shepherd', 'Fremont', '../dogImgs/australian-2.jpg', [1, 2, 4, 3, 4, 1], 'Molly is an Australian Shepherd from Fremont. She prefers walking over swimming or fetch, 10-20 minute walks, and his favorite activity is playing with multiple toys. She is very energetic, likes to play with a large pack of dogs, and gets along best with small dogs.');
 
+var Asha = new Dog('Asha', 'Pisces', 'Husky', 'University District', '../dogImgs/asha.jpg', [3, 4, 3, 4, 4, 2], 'Asha is an Alaskan Husky and service dog from the University District. She likes swimming, 30+ minute walks, and her favorite activity is playing with a ball. She is crazy energetic, likes to play with a small group of dogs, and gets along well with dogs of any size.');
+
 //pushes match scores (from compareDogs) to myDogScores
 var makeScores = function() {
   for (var i = 0; i < builtInDogs.length; i++) {
@@ -78,8 +80,8 @@ var makeScores = function() {
 
 //Takes two dogs, and compares how similar their multiple choice answers are. Returns "total" which is a value of how different your dogs are. Smaller = closest match.
 var compareDogs = function(dog1, dog2) {
-  for (var i = 0; i < 5; i++) {
-    dog2.dogScore += Math.abs(dog1.quizResults[i] - dog2.quizResults[i]);
+  for (var j = 0; j < 5; j++) {
+    dog2.dogScore += Math.abs(dog1.quizResults[j] - dog2.quizResults[j]);
     if(dog1.starSign === dog2.starSign){
       dog2.dogScore --;
     }
@@ -98,11 +100,17 @@ var whichDog = function() {
   myDogScores.sort(function(a, b) {
     return (a.dogScore - b.dogScore);
   });
-  localStorage.setItem('dogResults', JSON.stringify(myDogScores));
   appendToResults();
 };
 
+function capitalize(string) {
+  return string[0].toUpperCase() + string.slice(1);
+};
+
 var appendToResults = function(){
+  var targetLabel = document.getElementById('topMatchLabel');
+  targetLabel.innerHTML = capitalize(ownerName) + ' and ' + capitalize(dogName) + '\'s Top Matches:';
+
   var firstH3 = document.getElementById('firstH3');
   firstH3.innerHTML = 'Top Match: ' + myDogScores[0].name;
   var secondH3 = document.getElementById('secondH3');

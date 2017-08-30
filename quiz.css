@@ -59,7 +59,7 @@
 
  .main{
   position: relative;
-  top: 300px;
+  top: 150px;
   width: 50%;
   text-align: center;
   margin: auto;
@@ -69,18 +69,6 @@
   font-family: 'Quicksand', sans-serif;
   height: 230px;
 
- }
-
- .submit{
-   background-color: #28bf20;
-  border: 1px solid black;
-  border-radius: 10px;
-  color: white;
-  padding: 10px;
-  opacity: 1;
-  position: relative;
-  top: 45px;
-  right: 308px;
  }
 
  .button{
@@ -119,8 +107,6 @@
   clear:both;
 }
 
-
-
 #field {
-  margin-top: 25px;
+  border-style: none;
 }
