@@ -1,0 +1,60 @@
+h2 {
+  font-family: 'Itim', cursive;
+  font-size: 3.3em;
+  color: rgba(96, 125, 139, 0.82);
+}
+p {
+  font-family: 'Baloo Bhaijaan', cursive;
+  text-align: center;
+}
+.container {
+border: 2px solid #ccc;
+background-color: #eee;
+border-radius: 5px;
+padding: 16px;
+margin: 16px 0;
+opacity: 0.8;
+}
+.container:hover {
+  border-color: #9C27AF;
+}
+
+.container img {
+float: left;
+margin-right: 20px;
+border-radius: 50%;
+height: 120px;
+}
+
+#second-img {
+  float: right;
+  border-radius: 17%;
+  height: 111px;
+
+}
+#first-img{
+  border: 3px solid rgba(3, 169, 244, 0.44);
+}
+#second-img{
+  border: 3px solid rgba(233, 30, 99, 0.58);
+
+}
+#third-img{
+  border: 3px solid rgba(139, 195, 74, 0.84);
+}
+
+.container span {
+font-size: 20px;
+margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .container {
+    text-align: center;
+  }
+  .container img {
+    margin: auto;
+    float: none;
+    display: block;
+  }
+}

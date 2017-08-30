@@ -6,16 +6,16 @@ var userInput = [];
 function removeForm(event){
   event.preventDefault();
 
-  var answerOne = event.target.getElementsByClassName('typeOfDog').ques1.value;
+  var answerOne = document.getElementById('ques1').value;
   userInput.push(answerOne);
-  var answerTwo = event.target.getElementsByClassName('typeOfDog').ques2.value;
+  var answerTwo = document.getElementById('ques2').value;
   userInput.push(answerTwo);
-  var answerThree = event.target.getElementsByClassName('typeOfDog').ques3.value;
+  var answerThree = document.getElementById('ques3').value;
   userInput.push(answerThree);
-  console.log(userInput);
-
+  console.log('yoooo');
   var json = JSON.stringify(userInput);
   localStorage.setItem('formData', json);
+
   document.getElementById(formIDs[num]).style.display = 'none';
   if(num < 6){
     render(num, formIDs[num + 1], buttonLables[num]);
