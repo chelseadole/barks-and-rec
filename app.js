@@ -19,7 +19,7 @@ var builtInDogs = [];
 var myDogScores = [];
 
 // dog we're using for testing. Later this will be input info from form.
-var myDog = new Dog('myDog', 'Aries', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [2, 4, 1, 4, 2, 4], 'MyDog is our placeholder form dog.');
+var myDog = new Dog('myDog', 'Leo', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [3, 2, 2, 2, 1, 3], 'MyDog is our placeholder form dog.');
 
 var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 4, 3, 3], 'Evi is a German Shepherd from Lake City. She likes swimming, 30+ minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is very energetic, likes to play with a large pack of dogs, and gets along best with big dogs.');
 
@@ -55,7 +55,7 @@ var Benji = new Dog('Benji', 'Aquarius', 'Shiba Inu', 'Montlake', '../dogImgs/sh
 
 var Spot = new Dog('Spot', 'Virgo', 'Dalmation', 'Eastlake', '../dogImgs/Dalmatian.jpg', [2, 1, 4, 4, 1, 2], 'Spot is a Dalmation from Eastlake. He likes playing fetch, 5-10 minute walks, and his favorite activity is playing with multiple toys. He is crazy energetic and doesn\'t get along well with all dogs, but gets along best with medium-sized dogs.');
 
-var Fido = new Dog('Fido', 'Aries', 'Cocker Spaniel', 'Crown Hill', '../dogImgs/cocker-spaniel.jpg', [4, 3, 2, 1, 2, 4], 'Fido is a Cocker Spaneil from Crown Hill. He likes playing socializing with other dogs, 20-30 minute walks, and his favorite activity is playing with a ball. He is not energetic, likes to play with just one other dog, and gets along with dogs of any size.');
+var Fido = new Dog('Fido', 'Aries', 'Cocker Spaniel', 'Crown Hill', '../dogImgs/cocker-spaniel.jpg', [4, 3, 2, 1, 2, 4], 'Fido is a Cocker Spaniel from Crown Hill. He likes playing socializing with other dogs, 20-30 minute walks, and his favorite activity is playing with a ball. He is not energetic, likes to play with just one other dog, and gets along with dogs of any size.');
 
 var Bailey = new Dog('Bailey', 'Cancer', 'Border Collie', 'University District', '../dogImgs/border-collie.jpg', [4, 4, 1, 4, 3, 1], 'Bailey is a Border Collie from the University District. He likes socializing with other dogs, 30+ minute walks, and his favorite activity is walking or playing without toys. He is crazy energetic, likes to play with a small group of dogs, and gets along best with small dogs.');
 
