@@ -18,7 +18,13 @@ function Dog(name, starSign, breed, loc, picture, quizResults, bio) {
 var builtInDogs = [];
 var myDogScores = [];
 
-// dog we're using for testing. Later this will be input info from form.
+// function makeMyDog() {
+//   //code here to grab dog's name, star sign, breed, and neighborhood
+//   var radioAnswerArray = JSON.parse(localStorage.answersData);
+//   var formAnswerArray = JSON.parse(localStorage.SOMETHING);
+//   var myDog = new Dog();
+// };
+
 var myDog = new Dog('myDog', 'Leo', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [3, 2, 2, 2, 1, 3], 'MyDog is our placeholder form dog.');
 
 var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 4, 3, 3], 'Evi is a German Shepherd from Lake City. She likes swimming, 30+ minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is very energetic, likes to play with a large pack of dogs, and gets along best with big dogs.');
@@ -167,5 +173,6 @@ var dogMap = {
   Molly: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43108.775032065685!2d-122.37647748714612!3d47.642048574128076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901502b25bb07f%3A0x1e6e55abec496196!2sGas+Works+Park!5e0!3m2!1sen!2sus!4v1504028526850',
 };
 
+// makeMyDog();
 makeScores();
 whichDog();
