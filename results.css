@@ -17,29 +17,7 @@ p {
   width: 33%;
 }
 
-
-
-/*p, iframe, img {
-  position: relative;
-  float: left;
+h4 {
+  text-align: center;
 }
 
-h3 {
-  display: block;
-}
-
-#firstResult, #secondResult, #thirdResult {
-  display: inline-block;
-  background-color:
-}
-
-p {
-  width: 400px;
-  border-radius: 10px;
-  background-color: rgba(173, 213, 169, 0.83);
-}
-
-.classdivs {
-  float: left;
-  position: absolute;
-}*/
