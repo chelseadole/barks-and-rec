@@ -55,6 +55,7 @@
  body{
    margin: 1px;
    background-image: url(miscImages/parkBackgroundSmaller.jpg);
+   background-size: cover;
  }
 
  .main{
@@ -117,4 +118,14 @@
 
 .groupMember{
   clear:both;
+}
+
+.contact{
+  width: 40%;
+  float: left;
+  margin: 3%;
+}
+
+.tweet{
+  margin: 3%;
 }
