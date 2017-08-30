@@ -110,3 +110,28 @@
 #field {
   border-style: none;
 }
+
+.bubbleTwo {
+    position: relative;
+    top: 190px;
+    width: 0%;
+    text-align: center;
+    margin: auto;
+    background-color: rgba(255,255,255,.8);
+    border-radius: 100px;
+    padding: 7px;
+    height: 0px;
+}
+
+.bubbleThought {
+  right: 160px
+  position: relative;
+  top: 190px;
+  width: 0%;
+  text-align: center;
+  margin: auto;
+  background-color: rgba(255,255,255,.8);
+  border-radius: 100px;
+  padding: 6px;
+  height: 0px;
+}
