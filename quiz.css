@@ -59,7 +59,7 @@
 
  .main{
   position: relative;
-  top: 300px;
+  top: 150px;
   width: 50%;
   text-align: center;
   margin: auto;
@@ -107,16 +107,6 @@
   clear:both;
 }
 
-#form {
-  text-align: center;
-  position: relative;
-  top: 200px;
-  width: 54%;
-  left: 270px;
-  font-family: 'Quicksand', sans-serif;
-}
-
-fieldset {
-  border-radius: 25px;
-padding: 20px;
+#field {
+  border-style: none;
 }
