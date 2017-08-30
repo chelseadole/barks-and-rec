@@ -1,0 +1,28 @@
+body{
+  width:100%;
+  border: 1px solid #ccc;
+  border-right: none;
+}
+
+div{
+  display: inline-block;
+  width: 33%;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+.social{
+    /*background-color: red;*/
+}
+
+.logo{
+  background-color: blue;
+}
+
+.nav{
+  background-color: green;
+}
+
+img{
+  width: calc(100% / 6);
+}
