@@ -56,12 +56,13 @@ function render(qnumber, formID, buttonLables){
   label.appendChild(subChoice);
   subChoice.addEventListener('click', removeForm);
   subChoice.addEventListener('click', function (){
-    for(var i = 0; i < 4; i ++){
+    for(var i = 1; i < 5; i ++){
       var currentButton = document.getElementsByClassName(buttonLables)[i];
       if(currentButton.checked){
-        userChoice.push(currentButton.nextSibling.data);
+        userChoice.push(i);
       }
-    } var myJSON = JSON.stringify(userChoice);
+    }
+    var myJSON = JSON.stringify(userChoice);
     localStorage.setItem('answersData', myJSON);
   });
 };
