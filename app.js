@@ -22,10 +22,7 @@ var myDogScores = [];
 
 var radioAnswerArray = JSON.parse(localStorage.answersData);
 var formAnswerArray = JSON.parse(localStorage.formData);
-console.log(radioAnswerArray);
-var testArray = ['hello', 'world'];
-var myDog = new Dog('MyDog', formAnswerArray[2], formAnswerArray[0], formAnswerArray[1], 'My House', 'img-placeholder', radioAnswerArray, 'bio-placeholder');
-console.log(myDog);
+var myDog = new Dog('MyDog', formAnswerArray[2], formAnswerArray[0], formAnswerArray[1], 'My House', radioAnswerArray, 'bio-placeholder');
 
 var Evi = new Dog('Evi', 'Leo', 'German Shepherd', 'Lake City', '../dogImgs/germanshepherd-evi.jpg', [3, 4, 4, 4, 3, 3], 'Evi is a German Shepherd from Lake City. She likes swimming, 30+ minute walks, and her favorite activity is playing tug-of-war with a stick or rope. She is very energetic, likes to play with a large pack of dogs, and gets along best with big dogs.');
 
@@ -80,11 +77,7 @@ var makeScores = function() {
 //Takes two dogs, and compares how similar their multiple choice answers are. Returns "total" which is a value of how different your dogs are. Smaller = closest match.
 var compareDogs = function(dog1, dog2) {
   for (var j = 0; j < 5; j++) {
-    console.log(dog2.dogScore);
     dog2.dogScore += Math.abs(dog1.quizResults[j] - dog2.quizResults[j]);
-    console.log(dog2.dogScore);
-    console.log(dog2.quizResults[j]);
-    console.log(dog1.quizResults[j]);
     if(dog1.starSign === dog2.starSign){
       dog2.dogScore --;
     }
