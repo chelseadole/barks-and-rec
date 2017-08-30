@@ -50,12 +50,18 @@ function render(qnumber, formID, buttonLables){
         console.log(currentButton.nextSibling);
         userChoice.push(currentButton.nextSibling.data);
       }
-    }
+    } var myJSON = JSON.stringify(userChoice);
+    console.log(myJSON);
+    localStorage.setItem('answersData', myJSON);
+    console.log(localStorage);
 
   });
 };
 
 document.getElementById('form').addEventListener('submit',removeForm);
+
+// var one = localStorage.getItem('answersData');
+// var obj = JSON.parse(one);
 
 var dogQuestions = [{
   question: 'Which of these does your dog likes most?',
