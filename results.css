@@ -1,0 +1,20 @@
+h2 {
+  color: red;
+  text-align: center;
+}
+
+p, iframe, img {
+  float: left;
+}
+
+h3 {
+  display: block;
+}
+
+#firstResult, #secondResult, #thirdResult {
+  display: inline-block;
+}
+
+p {
+  width: 400px;
+}

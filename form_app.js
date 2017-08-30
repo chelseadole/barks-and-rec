@@ -28,6 +28,7 @@ function render(qnumber, formID, buttonLables){
 
   for ( var j = 0; j < 4; j ++){
       // var inputForm = document.createElement('form');
+
     var radio = document.createElement('input');
     radio.type = 'radio';
     radio.setAttribute('name','answers');
