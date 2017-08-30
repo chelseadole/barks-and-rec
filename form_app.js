@@ -1,16 +1,28 @@
 'use strict';
 var userChoice = [];
 var num = 0;
+var userInput = [];
+
 function removeForm(event){
   event.preventDefault();
-// Used to pull answers from Dog Info
-  // answer1 = event.target.getElementsByTagName('input').ques1.value;
+
+  var answerOne = event.target.getElementsByClassName('typeOfDog').ques1.value;
+  userInput.push(answerOne);
+  var answerTwo = event.target.getElementsByClassName('typeOfDog').ques2.value;
+  userInput.push(answerTwo);
+  var answerThree = event.target.getElementsByClassName('typeOfDog').ques3.value;
+  userInput.push(answerThree);
+  console.log(userInput);
+
+  var json = JSON.stringify(userInput);
+  localStorage.setItem('formData', json);
   document.getElementById(formIDs[num]).style.display = 'none';
   if(num < 6){
     render(num, formIDs[num + 1], buttonLables[num]);
     num++;
   };
 }
+
 function render(qnumber, formID, buttonLables){
   var div = document.getElementById('multi');
   var formIn = document.createElement('form');
@@ -47,14 +59,10 @@ function render(qnumber, formID, buttonLables){
     for(var i = 0; i < 4; i ++){
       var currentButton = document.getElementsByClassName(buttonLables)[i];
       if(currentButton.checked){
-        console.log(currentButton.nextSibling);
         userChoice.push(currentButton.nextSibling.data);
       }
     } var myJSON = JSON.stringify(userChoice);
-    console.log(myJSON);
     localStorage.setItem('answersData', myJSON);
-    console.log(localStorage);
-
   });
 };
 
