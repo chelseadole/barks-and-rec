@@ -1,17 +1,13 @@
-body{
+.fix{
+  font-size: 0px;
   width:100%;
-  border: 1px solid #ccc;
-  border-right: none;
 }
 
-div{
+.box{
   display: inline-block;
   width: 33%;
   height: 200px;
   box-sizing: border-box;
-  overflow: hidden;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
 }
 
 .social{
@@ -23,9 +19,15 @@ div{
 }
 
 .nav{
-  background-color: green;
+  /*background-color: green;*/
+  font-size: 16px;
+  text-align: center;
 }
 
-img{
-  width: calc(100% / 6);
+.icon{
+  font-size: 80px;
+  position: relative;
+  bottom: 50px;
+  margin: 1px;
+  margin-left: 1%;
 }
