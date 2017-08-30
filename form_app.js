@@ -7,11 +7,11 @@ function removeForm(event){
   // answer1 = event.target.getElementsByTagName('input').ques1.value;
   document.getElementById(formIDs[num]).style.display = 'none';
   if(num < 6){
-    render(num, formIDs[num + 1]);
+    render(num, formIDs[num + 1], buttonLables[num]);
     num++;
   };
 }
-function render(qnumber, formID){
+function render(qnumber, formID, buttonLables){
   var div = document.getElementById('multi');
   var formIn = document.createElement('form');
   formIn.setAttribute('id', formID);
@@ -32,6 +32,7 @@ function render(qnumber, formID){
     var radio = document.createElement('input');
     radio.type = 'radio';
     radio.setAttribute('name','answers');
+    radio.setAttribute('class', buttonLables);
     label.appendChild(radio);
     label.innerHTML += answers[j] + '<br>';
 
@@ -42,16 +43,17 @@ function render(qnumber, formID){
   subChoice.style = 'display: block';
   label.appendChild(subChoice);
   subChoice.addEventListener('click', removeForm);
+  subChoice.addEventListener('click', function (){
+    for(var i = 0; i < 4; i ++){
+      var currentButton = document.getElementsByClassName(buttonLables)[i];
+      if(currentButton.checked){
+        console.log(currentButton.nextSibling);
+        userChoice.push(currentButton.nextSibling.data);
+      }
+    }
+
+  });
 };
-// function addAnotherQuestion(event) {
-//   event.preventDefault();
-//   var lable = document.getElementById('formLabel').style.display = 'none';
-//   // lable.innerHTML = '';
-//   num ++;
-//   console.log(num);
-//
-// };
-// document.getElementById('formLabel').addEventListener('click', addAnotherQuestion);
 
 document.getElementById('form').addEventListener('submit',removeForm);
 
@@ -82,3 +84,4 @@ var dogQuestions = [{
 ];
 
 var formIDs = ['form','form1','form2','form3','form4','form5', 'form6'];
+var buttonLables = ['button1','button2','button3','button4','button5','button6'];
