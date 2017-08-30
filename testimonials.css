@@ -7,6 +7,21 @@ p {
   font-family: 'Baloo Bhaijaan', cursive;
   text-align: center;
 }
+ul {
+  list-style-type: none;
+}
+ul > li {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: #28bf20;
+  border: 1px solid #eeeeed;
+  border-radius: 10px;
+  margin-left: 101px;
+}
+a {
+  color: black;
+}
 .container {
 border: 2px solid #ccc;
 background-color: #eee;
@@ -42,7 +57,13 @@ height: 120px;
 #third-img{
   border: 3px solid rgba(139, 195, 74, 0.84);
 }
-
+#title {
+  display: block;
+}
+#navul{
+  display: block;
+  widt: 100%;
+}
 .container span {
 font-size: 20px;
 margin-right: 15px;
