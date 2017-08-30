@@ -33,7 +33,7 @@
 }
 
 .icon{
-  font-size: 4vw;
+  font-size: 3vw;
   position: relative;
   margin: 1px;
   margin-left: 1%;
@@ -48,10 +48,14 @@
   font-size: 1vw;
   position: relative;
   height: 20px;
+  margin: 1%;
 }
 
 a{
   text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #28bf20;
+  color: white;
 }
 
 .fb{
