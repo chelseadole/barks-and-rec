@@ -21,8 +21,8 @@ var myDogScores = [];
 // function makeMyDog() {
 //   //code here to grab dog's name, star sign, breed, and neighborhood
 //   var radioAnswerArray = JSON.parse(localStorage.answersData);
-//   var formAnswerArray = JSON.parse(localStorage.SOMETHING);
-//   var myDog = new Dog();
+//   // var formAnswerArray = JSON.parse(localStorage.SOMETHING);
+//   var myDog = new Dog('Name', 'Cancer', 'Terrier', 'My House', 'img link', radioAnswerArray, 'Placeholder description');
 // };
 
 var myDog = new Dog('myDog', 'Leo', 'Shiba Inu', 'Code Fellows', '../dogImgs/mydog.jpg', [3, 2, 2, 2, 1, 3], 'MyDog is our placeholder form dog.');
