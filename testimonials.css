@@ -1,8 +1,7 @@
 h2 {
   text-align: center;
-  font-family: 'Itim', cursive;
-  font-size: 3.3em;
-  color: rgba(96, 125, 139, 0.82);
+  font-family: 'Quicksand', sans-serif;
+  color: rgb(175, 52, 52);
 }
 p {
   font-family: 'Quicksand', sans-serif;
@@ -38,7 +37,7 @@ background-color: #eee;
 border-radius: 25px;
 padding: 16px;
 margin: 16px 20%;
-opacity: 0.8;
+opacity: 0.9;
 }
 .container:hover {
   border-color: #9C27AF;
