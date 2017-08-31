@@ -26,6 +26,11 @@ ul > li {
 a {
   color: black;
 }
+
+a:hover{
+  background-color: #4286f4;
+}
+
 .container {
 border: 2px solid #ccc;
 background-color: #eee;
