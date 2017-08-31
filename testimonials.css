@@ -5,8 +5,11 @@ h2 {
   color: rgba(96, 125, 139, 0.82);
 }
 p {
-  font-family: 'Baloo Bhaijaan', cursive;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
+}
+span {
+  color: purple;
 }
 ul {
   list-style-type: none;
