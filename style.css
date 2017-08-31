@@ -56,6 +56,7 @@ a{
   font-family: 'Quicksand', sans-serif;
   background-color: #28bf20;
   color: white;
+  font-weight: bold;
 }
 
 a:hover{
@@ -97,7 +98,7 @@ body{
   width: 50%;
   text-align: center;
   margin: auto;
-  background-color: rgba(255,255,255,.8);
+  background-color: rgba(255,255,255,.9);
   border-radius: 25px;
   padding: 20px;
   font-family: 'Quicksand', sans-serif;
@@ -125,7 +126,7 @@ body{
   margin: auto;
   position: relative;
   top: 30px;
-  background-color: rgba(255,255,255,.8);
+  background-color: rgba(255,255,255,.9);
   border-radius: 25px;
   padding: 20px;
   font-family: 'Quicksand', sans-serif;
@@ -147,7 +148,7 @@ body{
   width: 40%;
   float: left;
   margin: 3%;
-  background-color: rgba(255,255,255,.8);
+  background-color: rgba(255,255,255,.9);
   border-radius: 25px;
   padding: 20px;
   font-family: 'Quicksand', sans-serif;
