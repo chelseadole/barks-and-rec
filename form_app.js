@@ -52,7 +52,7 @@ function render(qnumber, formID, buttonLabels){
 
   var subChoice = document.createElement('button');
   subChoice.type = 'button';
-  subChoice.innerHTML = 'Submit Answer';
+  subChoice.innerHTML = 'Submit';
   subChoice.style = 'display: block';
   label.appendChild(subChoice);
   subChoice.addEventListener('click', removeForm);
