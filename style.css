@@ -168,3 +168,10 @@ img {
 .sub{
   position: static;
 }
+
+.copyright {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  position: relative;
+  top: 270px;
+}

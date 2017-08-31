@@ -9,5 +9,5 @@ function storeInfo(event){
   // console.log(form.elements['dogName'].value);
   localStorage.setItem('ownerName', form.elements['userName'].value);
   localStorage.setItem('dogName', form.elements['dogName'].value);
-  location.assign('quiz.html');
+  location.assign('pages/quiz.html');
 }
