@@ -87,7 +87,7 @@ var dogQuestions = [{
   choices: ['Not very well ', 'Good with one other dog', 'Great with a small group', 'My dog loves being part of a pack! The more the merrier. ']
 },
 {
-  question:'What sizes of dgos does your dog mesh with best?',
+  question:'What sizes of dogs does your dog mesh with best?',
   choices: ['Small dogs only ', 'Medium dogs only', 'Big dogs only', 'Any dog size is okay ']
 },
 {
@@ -96,7 +96,7 @@ var dogQuestions = [{
 },
 {
   question:'What toy does your dog like most?',
-  choices: ['My dog prefers walking or playing without toys ', 'A ball is best, something to fetch', 'A stick or rope toy for tug-of-war', 'Multiple toys is best ']
+  choices: ['My dog prefers walking or playing without toys', 'A ball is best, something to fetch', 'A stick or rope toy for tug-of-war', 'Multiple toys is best']
 },
 ];
 

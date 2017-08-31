@@ -147,3 +147,7 @@ body{
 .tweet{
   margin: 3%;
 }
+
+img {
+  margin-right: 15px;
+}
