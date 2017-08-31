@@ -108,7 +108,7 @@ iframe {
 
 .logo h1{
   font-size: 4vw;
-  width: 74%;
+  width: 67%;
   display:inline-block;
   font-family: 'Lobster Two', cursive;
 }
@@ -148,6 +148,10 @@ a {
   font-family: 'Quicksand', sans-serif;
   background-color: #28bf20;
   color: white;
+}
+
+a:hover{
+  background-color: #4286f4;
 }
 
 #bottomButton {

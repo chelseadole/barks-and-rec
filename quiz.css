@@ -21,6 +21,10 @@
   color: white;
 }
 
+a:hover{
+  background-color: #4286f4;
+}
+
 button{
   border: 1px solid black;
   border-radius: 10px;
@@ -46,7 +50,7 @@ button{
 
 .logo h1{
   font-size: 4vw;
-  width: 74%;
+  width: 67%;
   display:inline-block;
   font-family: 'Lobster Two', cursive;
 }
