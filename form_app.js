@@ -48,7 +48,6 @@ function render(qnumber, formID, buttonLabels){
     radio.setAttribute('class', buttonLabels);
     label.appendChild(radio);
     label.innerHTML += answers[j] + '<br>';
-
   }
 
   var subChoice = document.createElement('button');
