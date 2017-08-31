@@ -38,7 +38,6 @@ function render(qnumber, formID, buttonLabels){
   label.setAttribute('id', 'formLabel');
   form.appendChild(label);
   var answers = dogQuestions[qnumber].choices;
-  // console.log(answers);
 
   for ( var j = 0; j < 4; j ++){
       // var inputForm = document.createElement('form');
@@ -66,6 +65,7 @@ function render(qnumber, formID, buttonLabels){
       }
     }
     var myJSON = JSON.stringify(userChoice);
+    localStorage.setItem('answersData', myJSON);
   });
 };
 
