@@ -6,3 +6,4 @@
   Chelsea - results page, how the results are determined
   David - quiz page, how we make questions appear one at a time
   Abdul - Testimonials page and the animations, also more on quiz since you both worked on it
+  
