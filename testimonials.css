@@ -25,6 +25,7 @@ ul > li {
 }
 a {
   color: black;
+  font-weight: bold;
 }
 
 a:hover{
