@@ -147,10 +147,10 @@ form {
   margin-bottom: 1%;
 }
 
-label {
+.labels {
   float:left;
 }
 
-input {
+.typeOfDog {
   float: right;
 }
