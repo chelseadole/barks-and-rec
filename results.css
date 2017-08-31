@@ -150,6 +150,15 @@ a {
   color: white;
 }
 
+#bottomButton {
+  background-color: rgba(255,255,255, .10);
+  color: black;
+}
+
+#bottomButton:hover {
+  color: #4286f4;
+}
+
 .fb{
   margin-left: 10%;
   color: #3B579D;
