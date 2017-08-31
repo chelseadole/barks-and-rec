@@ -84,11 +84,12 @@ body{
   background-image: url(miscImages/parkBackgroundSmaller.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: 100%;
 }
 
 .main{
   position: relative;
-  top: 300px;
+  top: 200px;
   width: 50%;
   text-align: center;
   margin: auto;
@@ -96,7 +97,7 @@ body{
   border-radius: 25px;
   padding: 20px;
   font-family: 'Quicksand', sans-serif;
-  height: 230px;
+  height: 300px;
  }
 
 .submit{
@@ -106,7 +107,6 @@ body{
   color: white;
   padding: 10px;
   opacity: 1;
-  position: relative;
   top: 45px;
   right: 308px;
  }
@@ -146,4 +146,16 @@ body{
 
 .tweet{
   margin: 3%;
+}
+
+img {
+  margin-right: 15px;
+}
+
+.label{
+  margin: 2%;
+}
+
+.sub{
+  position: static;
 }
