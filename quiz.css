@@ -19,6 +19,7 @@
   margin: 1%;
   background-color: #28bf20;
   color: white;
+  cursor: pointer;
 }
 
 a:hover{
@@ -38,6 +39,7 @@ button{
   background-color: #28bf20;
   color: white;
   margin-left: 35%;
+  cursor: pointer;
 }
 
 
