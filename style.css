@@ -58,6 +58,10 @@ a{
   color: white;
 }
 
+a:hover{
+  background-color: #4286f4;
+}
+
 .fb{
   margin-left: 10%;
   color: #3B579D;
@@ -110,6 +114,10 @@ body{
   opacity: 1;
   top: 45px;
   right: 308px;
+ }
+
+ .submit:hover{
+   background-color: #4286f4;
  }
 
  .aboutSection{
