@@ -74,7 +74,7 @@ document.getElementById('form').addEventListener('submit',removeForm);
 // var obj = JSON.parse(one);
 
 var dogQuestions = [{
-  question: 'Which of these does your dog likes most?',
+  question: 'Which of these activities does your dog like most?',
   choices: ['Just walk', 'Playing fetch', ' Swimming', 'Playing with other dogs']
 },
 {
@@ -94,7 +94,7 @@ var dogQuestions = [{
   choices: ['Not at all ', 'A little', 'Very energetic', 'Crazy ']
 },
 {
-  question:'What toy does your dog like most?',
+  question:'What toy does your dog prefer?',
   choices: ['My dog prefers walking or playing without toys', 'A ball is best, something to fetch', 'A stick or rope toy for tug-of-war', 'Multiple toys is best']
 },
 ];
